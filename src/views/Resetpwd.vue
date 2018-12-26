@@ -37,8 +37,7 @@
         plain
         size="large"
         @click="update"
-        class="mt_btn"
-        v-if='toggle'>修改密码</mt-button>
+        class="mt_btn">修改密码</mt-button>
     </section>
   </div>
 </template>

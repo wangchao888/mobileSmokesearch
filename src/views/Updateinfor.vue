@@ -10,7 +10,6 @@
       <mt-field
         label="头像"
         type = "file"
-        v-model = "file"
         :readonly = '!toggle'
         :disableClear = '!toggle'
         class="mt_field"

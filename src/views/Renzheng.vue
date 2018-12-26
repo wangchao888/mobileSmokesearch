@@ -37,8 +37,7 @@
         plain
         size="large"
         @click="submit"
-        class="mt_btn"
-        v-if='toggle'>我要认证</mt-button>
+        class="mt_btn">我要认证</mt-button>
     </section>
   </div>
 </template>

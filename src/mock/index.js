@@ -7,6 +7,7 @@ import { detail } from './data/detail'
 import { indexes } from './data/indexes'
 import { contrast } from './data/contrast'
 import { application } from './data/application'
+import { brandlist } from './data/brandlist'
 
 export default {
     init() {
@@ -51,6 +52,12 @@ export default {
             let { currentPage, pageSize } = JSON.parse(arg.data)       
              return new Promise((resolve, reject) => {
                 resolve([200, { code: 200, msg: '请求成功',data:application}])
+             })
+         }) 
+         mock.onPost('/brandlist').reply(arg => { 
+            let { currentPage, pageSize } = JSON.parse(arg.data)       
+             return new Promise((resolve, reject) => {
+                resolve([200, { code: 200, msg: '请求成功',data:brandlist}])
              })
          })  
     }

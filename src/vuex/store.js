@@ -7,6 +7,7 @@ import detail from './modules/detail'
 import category from './modules/category'
 import login from './modules/login'
 import indexes from './modules/indexes'
+import brandlist from './modules/brandlist'
 
 Vue.use(Vuex)
 
@@ -15,6 +16,7 @@ export default new Vuex.Store({
     detail,
     category,
     login,
-    indexes
+    indexes,
+    brandlist
   }
 })

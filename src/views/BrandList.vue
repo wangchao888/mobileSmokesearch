@@ -10,7 +10,7 @@
         <router-link :to="{name:'分类页'}" class="section-list-left">
           <img v-lazy="k.imgPath">
         </router-link>
-        <div class="section-list-right">
+        <div class="section-list-right" @click="toDetails(k,i)">
           <h4>{{k.title}}</h4>
           <p>Starts at {{k.price}}</p>
         </div>
@@ -21,34 +21,28 @@
 
 <script>
   import { Lazyload } from 'mint-ui';
-  // import search from '@/http/mock.js' //模拟数据
+  import {query} from '../api/brandlist/query.js';//模拟数据
+
   export default {
     data() {
       return {
-        list:[],
-        banner:'',
-        dom: [{
-          title:'',
-          price:''
-        }, {
-          title:'',
-          price:''
-        }]
+        list:[]
       }
     },
-    mounted() {
-      // this.$api({
-      //   url: '/search',
-      // }).then(response => {
-      //   this.list = response.data.list
-      //   this.banner = response.data.banner
-      //   for (let i of this.dom.keys()) {
-      //     this.list[i].dom = this.dom[i]
-      //   }
-      // }).catch((error) => {
-      //   console.log(error)
-      // })
+    methods: {
+    toDetails (k,i) {
+      this.$store.state.brandlist.selectedList = k;
+      this.$router.replace({
+            path: 'branddetails'//修改成功自动跳转
+      })
     }
+   },
+    created () {
+			const datas = {} 
+			query(datas).then(data => {
+			this.list = data.data.list         
+		 });
+		}
   }
 </script>
 

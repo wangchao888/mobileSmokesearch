@@ -46,7 +46,7 @@
         size="large"
         @click="save"
         class="mt_btn"
-        v-if='toggle'>保存</mt-button>
+        >保存</mt-button>
     </section>
   </div>
 </template>

@@ -6,11 +6,9 @@ Vue.use(Router);
 const Index = resolve => require(['@/views/Index.vue'], resolve)
 const Category = resolve => require(['@/views/Category.vue'], resolve)
 const CategoryMain = resolve => require(['@/components/category/main.vue'], resolve)
-const Car = resolve => require(['@/views/Car.vue'],resolve)
 const User = resolve => require(['@/views/User.vue'], resolve)
 const Detail = resolve => require(['@/views/Detail.vue'], resolve)
 const Search = resolve => require(['@/views/Search.vue'], resolve)
-const Pay = resolve => require(['@/components/car/pay/pay.vue'], resolve)
 const Login = resolve => require(['@/views/login.vue'], resolve)
 const Identify = resolve => require(['@/views/Identify.vue'], resolve)
 const Scanne = resolve => require(['@/views/Scanne.vue'], resolve)
@@ -29,6 +27,8 @@ const BrandList = resolve => require(['@/views/BrandList.vue'], resolve)
 const BrandDetails = resolve => require(['@/views/BrandDetails.vue'], resolve)
 const Maps = resolve => require(['@/views/Maps.vue'], resolve)
 const Appreciation = resolve => require(['@/views/Appreciation.vue'], resolve)
+const IdentifyDetail = resolve => require(['@/views/IdentifyDetail.vue'], resolve)
+const AppreciationDetail = resolve => require(['@/views/AppreciationDetail.vue'], resolve)
 
 export default new Router({
   routes: [{
@@ -45,14 +45,6 @@ export default new Router({
         name: '分类页',
         component:CategoryMain
       }]
-    }, {
-      path: '/car',
-      name: '购物车页',
-      component: Car
-    }, {
-      path: '/car/pay',
-      name: '支付页',
-      component: Pay
     },
     {
       path: '/user',
@@ -77,6 +69,10 @@ export default new Router({
       path: '/identify',
       name: '真假烟辨别页',
       component: Identify
+    },{
+      path: '/identifydetail',
+      name: '真假烟鉴别详情',
+      component: IdentifyDetail
     },{
       path: '/scanne',
       name: '扫描页',
@@ -151,6 +147,10 @@ export default new Router({
       path: '/appreciation',
       name: '烟标鉴赏',
       component: Appreciation
+    },{
+      path: '/appreciationdetail',
+      name: '烟标鉴赏',
+      component: AppreciationDetail
     }
   ]
 })

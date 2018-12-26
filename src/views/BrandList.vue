@@ -7,9 +7,9 @@
     </mt-header>
     <ul class="section-list">
       <li v-for="k in list" :key='k.id'>
-        <router-link :to="{name:'分类页'}" class="section-list-left">
+        <div class="section-list-left">
           <img v-lazy="k.imgPath">
-        </router-link>
+        </div>
         <div class="section-list-right" @click="toDetails(k,i)">
           <h4>{{k.title}}</h4>
           <p>Starts at {{k.price}}</p>

@@ -6,8 +6,9 @@ import { index } from './data/index'
 import { detail } from './data/detail'
 import { indexes } from './data/indexes'
 import { contrast } from './data/contrast'
-import { application } from './data/application'
+import { appreciation } from './data/appreciation'
 import { brandlist } from './data/brandlist'
+import { identify } from './data/identify'
 
 export default {
     init() {
@@ -48,16 +49,22 @@ export default {
                 resolve([200, { code: 200, msg: '请求成功',data:contrast}])
              })
          })  
-         mock.onPost('/application').reply(arg => { 
+         mock.onPost('/appreciation').reply(arg => { 
             let { currentPage, pageSize } = JSON.parse(arg.data)       
              return new Promise((resolve, reject) => {
-                resolve([200, { code: 200, msg: '请求成功',data:application}])
+                resolve([200, { code: 200, msg: '请求成功',data:appreciation}])
              })
          }) 
          mock.onPost('/brandlist').reply(arg => { 
             let { currentPage, pageSize } = JSON.parse(arg.data)       
              return new Promise((resolve, reject) => {
                 resolve([200, { code: 200, msg: '请求成功',data:brandlist}])
+             })
+         }) 
+         mock.onPost('/identify').reply(arg => { 
+            let { currentPage, pageSize } = JSON.parse(arg.data)       
+             return new Promise((resolve, reject) => {
+                resolve([200, { code: 200, msg: '请求成功',data:identify}])
              })
          })  
     }

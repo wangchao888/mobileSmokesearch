@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="wrap">
     <ul class="something">
-        <li  v-for="(k,i) in selectedList">
+        <li v-for="(k,i) in selectedList">
             <div class="something-middle">
               <img :src="k.imgPath">
             </div>

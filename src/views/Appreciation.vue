@@ -3,10 +3,10 @@
 		<v-header title="烟标鉴赏"/>
 		 <ul class="section5-list">
             <li v-for="k in list" :key='k.id'>
-                <router-link :to="{name:'详情页'}">
-                <img v-lazy="k.imgPath">
+                <a @click="toDetails(k,i)">
+                 <img v-lazy="k.imgPath">
                 <p>{{k.intro}}</p>
-                </router-link>
+                </a>
                 <h3>{{k.title}}</h3>
                 <span>$ {{k.price}}</span>
             </li>
@@ -16,7 +16,7 @@
 
 <script>
     import Header from '@/common/_mheader.vue'
-    import {query} from '../api/application/query.js';
+    import {query} from '../api/appreciation/query.js';
 	export default {
 		components: {
 			'v-header':Header,
@@ -25,7 +25,15 @@
 			return {
 		    	list: {}
 			}
-		},
+    },
+     methods: {
+    toDetails (k,i) {
+      this.$store.state.appreciation.selectedList = k;
+      this.$router.replace({
+            path: 'appreciationdetail'//修改成功自动跳转
+      })
+    }
+   },
 		created () {
 			const datas = {} 
 			query(datas).then(data => {

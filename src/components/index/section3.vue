@@ -8,10 +8,10 @@
     </h1>
     <ul class="section3-list">
       <li v-for="k in list" :key='k.id'>
-        <router-link :to="{name:'分类页'}" class="section3-list-left">
+        <div class="section3-list-left">
           <img v-lazy="k.imgPath">
-        </router-link>
-        <div class="section3-list-right">
+        </div>
+        <div class="section3-list-right" @click="toDetails(k,i)">
           <h4>{{k.title}}</h4>
           <p>Starts at {{k.price}}</p>
         </div>
@@ -37,7 +37,15 @@ import { Lazyload } from 'mint-ui';
         return []
       }
     }
-  }
+  },
+   methods: {
+    toDetails (k,i) {
+      this.$store.state.brandlist.selectedList = k;
+      this.$router.replace({
+            path: 'branddetails'//修改成功自动跳转
+      })
+    }
+   },
   }
 </script>
 

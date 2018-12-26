@@ -1,6 +1,6 @@
 import Mock from 'mockjs'
 var Random = Mock.Random
-const application = Mock.mock({
+const appreciation = Mock.mock({
     'list|20':[{
         'title':'@first',
         'imgPath':Random.image('400x400', '#e2f630', '#333', 'png',''),
@@ -9,4 +9,4 @@ const application = Mock.mock({
         'id':'@id'
       }],
   });    
-export {application}
+export {appreciation}

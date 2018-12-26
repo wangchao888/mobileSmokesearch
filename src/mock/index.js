@@ -6,6 +6,7 @@ import { index } from './data/index'
 import { detail } from './data/detail'
 import { indexes } from './data/indexes'
 import { contrast } from './data/contrast'
+import { application } from './data/application'
 
 export default {
     init() {
@@ -45,6 +46,12 @@ export default {
              return new Promise((resolve, reject) => {
                 resolve([200, { code: 200, msg: '请求成功',data:contrast}])
              })
-         })   
+         })  
+         mock.onPost('/application').reply(arg => { 
+            let { currentPage, pageSize } = JSON.parse(arg.data)       
+             return new Promise((resolve, reject) => {
+                resolve([200, { code: 200, msg: '请求成功',data:application}])
+             })
+         })  
     }
 }

@@ -28,7 +28,7 @@ const Activity = resolve => require(['@/views/Activity.vue'], resolve)
 const BrandList = resolve => require(['@/views/BrandList.vue'], resolve)
 const BrandDetails = resolve => require(['@/views/BrandDetails.vue'], resolve)
 const Maps = resolve => require(['@/views/Maps.vue'], resolve)
-
+const Appreciation = resolve => require(['@/views/Appreciation.vue'], resolve)
 
 export default new Router({
   routes: [{
@@ -147,6 +147,10 @@ export default new Router({
       path: '/map',
       name: '地图',
       component: Maps
+    },{
+      path: '/appreciation',
+      name: '烟标鉴赏',
+      component: Appreciation
     }
   ]
 })

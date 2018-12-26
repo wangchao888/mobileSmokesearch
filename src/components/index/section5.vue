@@ -2,7 +2,9 @@
   <section class="section5">
     <h2 class="section5-title">
       烟标鉴赏
-      <i class="icon iconfont" style="font-size: 23px">&#xe622;</i>
+     <router-link :to="{name:'烟标鉴赏'}">
+        <i class="icon iconfont" style="font-size: 23px">&#xe622;</i>
+      </router-link>
     </h2>
     <ul class="section5-list">
       <li v-for="k in list" :key='k.id'>

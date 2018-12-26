@@ -2,7 +2,9 @@
   <section class="section4">
     <h2 class="section4-title">
       真假烟鉴别
-      <i class="icon iconfont" style="font-size: 23px">&#xe622;</i>
+      <router-link :to="{name:'真假烟辨别页'}">
+        <i class="icon iconfont" style="font-size: 23px">&#xe622;</i>
+      </router-link>
     </h2>
     <ul class="section4-list">
       <li v-for="k in list" :key='k.id'>

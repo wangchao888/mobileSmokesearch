@@ -2,7 +2,9 @@
   <section class="section1">
     <h1 class="section1-title">
       新品展示
-      <i class="icon iconfont" style="font-size: 23px">&#xe622;</i>
+      <router-link :to="{name:'新品展示'}">
+        <i class="icon iconfont" style="font-size: 23px">&#xe622;</i>
+      </router-link>
     </h1>
     <section class="ab-photo pr">
 				<div class="swiper-container">

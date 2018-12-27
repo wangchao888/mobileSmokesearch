@@ -21,7 +21,7 @@ const Compare = resolve => require(['@/views/Compare.vue'], resolve)
 const ResetPwd = resolve => require(['@/views/Resetpwd.vue'], resolve)
 const UpdateInfor = resolve => require(['@/views/Updateinfor.vue'], resolve)
 const RenZheng = resolve => require(['@/views/Renzheng.vue'], resolve)
-const BrandIntro = resolve => require(['@/views/BrandIntro.vue'], resolve)
+const CompanyIntro = resolve => require(['@/views/CompanyIntro.vue'], resolve)
 const Activity = resolve => require(['@/views/Activity.vue'], resolve)
 const BrandList = resolve => require(['@/views/BrandList.vue'], resolve)
 const BrandDetails = resolve => require(['@/views/BrandDetails.vue'], resolve)
@@ -123,9 +123,9 @@ export default new Router({
       name: '参数对比',
       component: Compare
     },{
-      path: '/brandintro',
+      path: '/companyintro',
       name: '品牌介绍',
-      component: BrandIntro
+      component: CompanyIntro
     }
     ,{
       path: '/activity',

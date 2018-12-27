@@ -15,7 +15,13 @@
       </li>
     </ul>
     <ul class="servicebar">
-      <li style='width:65%'><mt-search></mt-search></li>
+      <li style='width:65%'>
+        <div class="searchbox">
+          <input/>
+          <button>搜索</button>
+          <div style="clear:both;"></div>
+        </div>
+      </li>
       <li style='width:35%' @click="toSao"><i class="icon iconfont">&#xe642;</i><span>扫一扫</span></li>
     </ul>
   </div>
@@ -102,6 +108,19 @@ export default {
           }
           i {
             .fz(font-size,36);
+          }
+          .searchbox{
+            width:90%;
+            button{
+              float: left;
+              width: 25%;
+               height: 27px;
+            }
+            input{
+              float: left;
+              width: 75%;
+              height: 27px;
+            }
           }
         }
       }

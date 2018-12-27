@@ -16,19 +16,14 @@
         <p>河北中烟石家庄卷烟厂举办建厂70周年活动</p>
       </div>
     </ul>
-    <ul class="something" v-if='carList'>
+    <ul class="something">
       <li style="height:auto;" class="biaoti">旗下产品</li>
-      <li v-for="(k,i) in carList" class="cont">
-        <div class="ppcp" style="width:25%">
-          <img :src="k.imgPath" style="width:100%">
-        </div>
-        <div class="ppcp" style="width:25%">
-          <img :src="k.imgPath" style="width:100%">
-        </div>
-        <div class="ppcp" style="width:25%">
-          <img :src="k.imgPath" style="width:100%">
+      <li v-for="(k,i) in list":key='k.id' style="width:25%;float:left;" >
+        <div class="ppcp" >
+          <img v-lazy="k.imgPath" style="width:100%">
         </div>
       </li>
+      <li style="clear:both;height:0 !important;"></li>
     </ul>
     <ul class="something">
       <li style="height:auto;" class="biaoti">下属企业</li>
@@ -39,25 +34,20 @@
   </div>
 </template>
 <script>
+import { Lazyload } from 'mint-ui';
+import {query} from '../../api/companyintro/query.js';//模拟数据
   export default {
     data() {
       return {
-        selected: '1'
-      };
-    },
-    computed: {
-
-      carList () {
-        return this.$store.state.detail.carList;
-      },
-
-    },
-    mounted() {
-      // 初始化先获取购物车商品列表 否则 页面刷新出Bug
-      if (this.$store.state.detail.carList == "") {
-        this.$store.commit('RESET_CARLIST')
+        list:[]
       }
     },
+    created () {
+			const datas = {} 
+			query(datas).then(data => {
+			this.list = data.data.list         
+		 });
+		}
   }
 </script>
 
@@ -97,7 +87,7 @@
       }
     }
   .ppcp{
-    margin: 20px;
+    margin: 10px;
   }
   .biaoti{
     border-bottom:1px solid #F5F5F5;

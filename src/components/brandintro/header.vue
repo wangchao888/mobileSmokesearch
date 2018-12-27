@@ -1,7 +1,7 @@
 <template lang="html">
     <div class="wrap">
       <mt-header class="header"  title="企业简介">
-        <router-link to="" slot="left">
+        <router-link :to="{name:'首页'}" slot="left">
           <mt-button icon="back"></mt-button>
         </router-link>
       </mt-header>

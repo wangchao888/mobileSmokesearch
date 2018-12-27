@@ -6,7 +6,7 @@
     <div class="container">
     <table>
         <tr >
-          <td>{{list[0].name}}</td>
+          <td @click="showIntro(list[0].name)">{{list[0].name}}</td>
           <td>{{list[1].name}}</td>
           <td>{{list[2].name}}</td>
         </tr>
@@ -49,7 +49,14 @@
           return []
         }
       }
+    },
+     methods: {
+    showIntro (k) {
+      this.$router.replace({
+            path: 'companyintro'//修改成功自动跳转
+      })
     }
+   },
   }
 </script>
 

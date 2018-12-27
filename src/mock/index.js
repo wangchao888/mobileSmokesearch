@@ -9,6 +9,7 @@ import { contrast } from './data/contrast'
 import { appreciation } from './data/appreciation'
 import { brandlist } from './data/brandlist'
 import { identify } from './data/identify'
+import { companyintro } from './data/companyintro'
 
 export default {
     init() {
@@ -66,6 +67,12 @@ export default {
              return new Promise((resolve, reject) => {
                 resolve([200, { code: 200, msg: '请求成功',data:identify}])
              })
-         })  
+         }) 
+         mock.onPost('/companyintro').reply(arg => { 
+            let { currentPage, pageSize } = JSON.parse(arg.data)       
+             return new Promise((resolve, reject) => {
+                resolve([200, { code: 200, msg: '请求成功',data:companyintro}])
+             })
+         })   
     }
 }

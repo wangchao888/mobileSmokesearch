@@ -17,7 +17,8 @@
     <ul class="servicebar">
       <li style='width:65%'>
         <div class="searchbox">
-          <input/>
+          <input placeholder="可拍照扫码搜索"/>
+          <i class="icon iconfont photo">&#xe689;</i>
           <button>搜索</button>
           <div style="clear:both;"></div>
         </div>
@@ -111,15 +112,25 @@ export default {
           }
           .searchbox{
             width:90%;
+            position: relative;
             button{
               float: left;
               width: 25%;
                height: 27px;
+               background-color: #F9AF42;
             }
             input{
               float: left;
-              width: 75%;
+              width: 60%;
               height: 27px;
+              position: relative;
+              padding-left: 30px
+            }
+            .photo{
+              position:absolute;
+              left:5px;
+              color:#666;
+              top:4px
             }
           }
         }

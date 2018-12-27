@@ -15,10 +15,10 @@
       </li>
     </ul>
     <ul class="servicebar">
-      <li style='width:70%'>
+      <li style='width:65%'>
         <div class="searchbox">
-          <input placeholder="可拍照扫码搜索"/>
           <i class="icon iconfont photo">&#xe689;</i>
+          <input placeholder="可拍照扫码搜索" @blur="" @focus=""/>
           <button>搜索</button>
           <div style="clear:both;"></div>
         </div>
@@ -111,7 +111,7 @@ export default {
             .fz(font-size,36);
           }
           .searchbox{
-            width:90%;
+            width:100%;
             position: relative;
             button{
               float: left;
@@ -121,16 +121,18 @@ export default {
             }
             input{
               float: left;
-              width: 60%;
+              width: calc(75% - 26px);
               height: 27px;
               position: relative;
-              padding-left: 30px
             }
             .photo{
-              position:absolute;
-              left:5px;
+              float: left;
               color:#666;
-              top:4px
+              width:26px;
+              background: #fff;
+              text-align: center;
+              height: 27px;
+              line-height: 27px;
             }
           }
         }

@@ -124,7 +124,7 @@ export default new Router({
       component: Compare
     },{
       path: '/companyintro',
-      name: '品牌介绍',
+      name: '企业简介',
       component: CompanyIntro
     }
     ,{

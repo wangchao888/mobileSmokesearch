@@ -15,7 +15,7 @@
       </li>
     </ul>
     <ul class="servicebar">
-      <li style='width:65%'>
+      <li style='width:70%'>
         <div class="searchbox">
           <input placeholder="可拍照扫码搜索"/>
           <i class="icon iconfont photo">&#xe689;</i>
